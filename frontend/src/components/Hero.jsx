@@ -61,9 +61,9 @@ const Hero = () => {
             </Link>
 
             {/* Stats Cards */}
-            <div className="flex flex-wrap gap-3 md:gap-6 mt-6 md:mt-10">
+            <div className="flex flex-nowrap gap-3 md:gap-4 mt-6 md:mt-10">
               <motion.div
-                className="w-[140px] md:w-[180px] lg:w-[220px] h-[120px] md:h-[150px] bg-white rounded-2xl shadow-xl flex flex-col items-center justify-center"
+                className="w-[120px] md:w-[150px] lg:w-[170px] h-[100px] md:h-[120px] bg-white rounded-2xl shadow-xl flex flex-col items-center justify-center"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
@@ -75,7 +75,7 @@ const Hero = () => {
               </motion.div>
 
               <motion.div
-                className="w-[140px] md:w-[180px] lg:w-[220px] h-[120px] md:h-[150px] bg-white rounded-2xl shadow-xl flex flex-col items-center justify-center"
+                className="w-[120px] md:w-[150px] lg:w-[170px] h-[100px] md:h-[120px] bg-white rounded-2xl shadow-xl flex flex-col items-center justify-center"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
@@ -87,7 +87,7 @@ const Hero = () => {
               </motion.div>
 
               <motion.div
-                className="w-[140px] md:w-[180px] lg:w-[220px] h-[120px] md:h-[150px] bg-white rounded-2xl shadow-xl flex flex-col items-center justify-center"
+                className="w-[120px] md:w-[150px] lg:w-[170px] h-[100px] md:h-[120px] bg-white rounded-2xl shadow-xl flex flex-col items-center justify-center"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.7 }}

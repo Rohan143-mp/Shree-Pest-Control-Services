@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import aboutImg from "../assets/about_section.png";
 
 const About = () => {
   return (
@@ -17,8 +18,8 @@ const About = () => {
                    shadow-[inset_0_4px_4px_rgba(0,0,0,0.25),0_4px_4px_rgba(0,0,0,0.25)] overflow-hidden"
       >
         {/* Person Image - popping out */}
-        <motion.img 
-          src="src/assets/about_section.png" 
+        <motion.img
+          src={aboutImg}
           className="absolute -top-10 -right-10 md:-right-10 w-[400px] h-[350px] md:w-[500px] md:h-[400px] lg:w-[686px] lg:h-[527px] object-contain"
           alt="About Section Person"
           initial={{ scale: 0.95 }}
@@ -52,9 +53,9 @@ const About = () => {
 
         {/* Paragraph */}
         <p className="text-black font-arial text-sm md:text-base lg:text-[20px] leading-relaxed text-justify">
-          Shree Pest Control Service is a licensed and professional pest control company specializing in residential and commercial pest solutions.  
+          Shree Pest Control Service is a licensed and professional pest control company specializing in residential and commercial pest solutions.
           <br /><br />
-          We are a highly experienced and well-established company offering our services in Panvel, Pen, Navi Mumbai, Pali, Alibag, and surrounding areas. Our comprehensive pest management services cover commonly found pests such as cockroaches, ants, lizards, spiders, silverfish, and more.  
+          We are a highly experienced and well-established company offering our services in Panvel, Pen, Navi Mumbai, Pali, Alibag, and surrounding areas. Our comprehensive pest management services cover commonly found pests such as cockroaches, ants, lizards, spiders, silverfish, and more.
           <br /><br />
           Our team has unmatched expertise and experience, ensuring effective solutions with a professional approach tailored to your needs.
         </p>
