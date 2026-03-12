@@ -201,7 +201,7 @@ function AdminPage() {
       {/* Navbar - logo + logout */}
       <div className="w-full bg-cyan-700 text-white flex items-center justify-between px-8 py-4 shadow-md sticky top-0 z-40">
         <div className="flex items-center space-x-4">
-          <img src={logo} alt="Logo" className="h-10 w-10 rounded-full bg-white p-1" />
+          <img src={logo} alt="Shree Pest Control Services Logo" className="h-10 w-10 rounded-full bg-white p-1" loading="lazy" />
           <h1 className="text-xl font-extrabold tracking-wide">Shree Pest Control Services</h1>
         </div>
         <span
@@ -255,9 +255,8 @@ function AdminPage() {
             {["All", "Pending", "Confirmed", "Completed", "Cancelled"].map((status) => (
               <span
                 key={status}
-                className={`px-4 py-1 rounded-lg cursor-pointer ${
-                  filter === status ? "bg-cyan-600 text-white" : "bg-gray-200 hover:bg-gray-300"
-                }`}
+                className={`px-4 py-1 rounded-lg cursor-pointer ${filter === status ? "bg-cyan-600 text-white" : "bg-gray-200 hover:bg-gray-300"
+                  }`}
                 onClick={() => {
                   setFilter(status);
                   setCurrentPage(1);
@@ -414,9 +413,8 @@ function AdminPage() {
                     name: !validators.name(val) ? "Enter valid name (only letters)" : "",
                   });
                 }}
-                className={`w-full p-2 rounded-xl mb-1 border ${
-                  formErrors.name ? "border-red-500" : formData.name ? "border-green-500" : "border-gray-300"
-                }`}
+                className={`w-full p-2 rounded-xl mb-1 border ${formErrors.name ? "border-red-500" : formData.name ? "border-green-500" : "border-gray-300"
+                  }`}
               />
               {formErrors.name && <p className="text-red-500 text-xs mb-2">{formErrors.name}</p>}
 
@@ -433,9 +431,8 @@ function AdminPage() {
                     phone: !validators.phone(val) ? "Phone must be 10 digits" : "",
                   });
                 }}
-                className={`w-full p-2 rounded-xl mb-1 border ${
-                  formErrors.phone ? "border-red-500" : formData.phone ? "border-green-500" : "border-gray-300"
-                }`}
+                className={`w-full p-2 rounded-xl mb-1 border ${formErrors.phone ? "border-red-500" : formData.phone ? "border-green-500" : "border-gray-300"
+                  }`}
               />
               {formErrors.phone && <p className="text-red-500 text-xs mb-2">{formErrors.phone}</p>}
 
@@ -452,9 +449,8 @@ function AdminPage() {
                     email: !validators.email(val) ? "Enter valid email" : "",
                   });
                 }}
-                className={`w-full p-2 rounded-xl mb-1 border ${
-                  formErrors.email ? "border-red-500" : formData.email ? "border-green-500" : "border-gray-300"
-                }`}
+                className={`w-full p-2 rounded-xl mb-1 border ${formErrors.email ? "border-red-500" : formData.email ? "border-green-500" : "border-gray-300"
+                  }`}
               />
               {formErrors.email && <p className="text-red-500 text-xs mb-2">{formErrors.email}</p>}
 
@@ -480,13 +476,12 @@ function AdminPage() {
                     pincode: !validators.pincode(val)
                       ? "Pincode must be 6 digits"
                       : !serviceablePincodes.includes(val)
-                      ? "This pincode is not serviceable"
-                      : "",
+                        ? "This pincode is not serviceable"
+                        : "",
                   });
                 }}
-                className={`w-full p-2 rounded-xl mb-1 border ${
-                  formErrors.pincode ? "border-red-500" : formData.pincode ? "border-green-500" : "border-gray-300"
-                }`}
+                className={`w-full p-2 rounded-xl mb-1 border ${formErrors.pincode ? "border-red-500" : formData.pincode ? "border-green-500" : "border-gray-300"
+                  }`}
               />
               {formErrors.pincode && <p className="text-red-500 text-xs mb-2">{formErrors.pincode}</p>}
 
