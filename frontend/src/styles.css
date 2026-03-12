@@ -1,0 +1,355 @@
+/* ======================
+   Global + Layout
+====================== */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+@media (min-width: 640px) {
+  .main {
+    padding: 40px 20px;
+  }
+}
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 650px;
+}
+
+@media (min-width: 640px) {
+  .card {
+    padding: 24px;
+  }
+}
+
+.card.fixed-width {
+  width: 100%;
+  max-width: 600px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #222;
+}
+
+@media (min-width: 640px) {
+  .title {
+    font-size: 1.6rem;
+  }
+}
+
+.alert-msg {
+  background: #ffecec;
+  color: #d32f2f;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* ======================
+   Form Styling
+====================== */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 640px) {
+  .form-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.field.wide {
+  grid-column: span 1;
+}
+
+@media (min-width: 640px) {
+  .field.wide {
+    grid-column: span 2;
+  }
+}
+
+label {
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+input,
+select,
+textarea {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #4caf50;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.no-resize {
+  resize: none !important;
+}
+
+/* ======================
+   Price Box
+====================== */
+.price-box {
+  background: #f0fdf4;
+  border: 1px solid #4caf50;
+  color: #2e7d32;
+  font-weight: 600;
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+  margin: 10px 0 20px 0;
+}
+
+/* ======================
+   Buttons
+====================== */
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  padding: 10px 16px;
+  transition: all 0.2s ease;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.primary {
+  background: #4caf50;
+  color: #fff;
+  width: 100%;
+  font-weight: 600;
+}
+
+.primary:hover {
+  background: #43a047;
+}
+
+.cancel-btn {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.cancel-btn:hover {
+  background: #ccc;
+}
+
+.resend-btn {
+  background: transparent;
+  color: #4caf50;
+  border: 1px solid #4caf50;
+}
+
+.resend-btn:hover {
+  background: #f0fdf4;
+}
+
+/* ======================
+   OTP Modal
+====================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  max-width: 420px;
+  width: 95%;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  margin: 0 10px;
+}
+
+@media (min-width: 640px) {
+  .modal {
+    padding: 24px;
+    width: 90%;
+  }
+}
+
+.modal h3 {
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.otp-subtext {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+/* OTP Input */
+.otp-input-container {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin: 15px 0;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 640px) {
+  .otp-input-container {
+    gap: 10px;
+  }
+}
+
+.otp-input {
+  width: 35px;
+  height: 40px;
+  font-size: 1rem;
+  text-align: center;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+@media (min-width: 640px) {
+  .otp-input {
+    width: 40px;
+    height: 48px;
+    font-size: 1.2rem;
+  }
+}
+
+.otp-input:focus {
+  border-color: #4caf50;
+}
+
+.error-text {
+  color: #d32f2f;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.expiry-timer {
+  font-size: 0.85rem;
+  margin-top: 10px;
+  color: #555;
+}
+
+/* ======================
+   Validation Indicators
+====================== */
+.pincode-status {
+  margin-top: 4px;
+  font-size: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .pincode-status {
+    font-size: 0.85rem;
+  }
+}
+
+.text-green {
+  color: green;
+}
+
+.text-red {
+  color: red;
+}
+
+.valid {
+  color: green;
+  font-size: 0.85rem;
+}
+
+.invalid {
+  color: red;
+  font-size: 0.85rem;
+}
+
+/* ======================
+   Animations
+====================== */
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.shake {
+  animation: shake 0.3s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-4px); }
+  100% { transform: translateX(0); }
+}
