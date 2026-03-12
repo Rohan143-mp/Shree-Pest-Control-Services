@@ -12,7 +12,10 @@ import Booking from "./models/Booking.js";
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: process.env.FRONTEND_URL || "http://localhost:5173",
+  credentials: true,
+}));
 app.use(express.json());
 
 // =======================
@@ -74,9 +77,9 @@ app.post("/api/send-otp", async (req, res) => {
   // Validate email configuration
   if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
     console.error("❌ Email credentials not configured");
-    return res.status(500).json({ 
-      success: false, 
-      message: "Email service not configured. Please contact administrator." 
+    return res.status(500).json({
+      success: false,
+      message: "Email service not configured. Please contact administrator."
     });
   }
 
@@ -99,7 +102,7 @@ app.post("/api/send-otp", async (req, res) => {
   } catch (err) {
     console.error("❌ OTP send error:", err.message);
     console.error("   Full error:", err);
-    
+
     // Provide more specific error messages
     let errorMessage = "Failed to send OTP. Please try again.";
     if (err.code === "EAUTH") {
@@ -107,9 +110,9 @@ app.post("/api/send-otp", async (req, res) => {
     } else if (err.code === "ECONNECTION") {
       errorMessage = "Could not connect to email server. Please check your internet connection.";
     }
-    
-    res.status(500).json({ 
-      success: false, 
+
+    res.status(500).json({
+      success: false,
       message: errorMessage,
       error: process.env.NODE_ENV === "development" ? err.message : undefined
     });

@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import servicesData from "../data/servicesData";
 import "../styles.css";
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+
 const serviceablePincodes = ["560001", "560002", "560003", "400001", "400002"];
 
 export default function Booking() {
@@ -54,7 +56,7 @@ export default function Booking() {
       return;
     }
     try {
-      await axios.post("http://localhost:5000/api/send-otp", {
+      await axios.post(`${API_URL}/api/send-otp`, {
         email: formData.email,
       });
       setOtpModal(true);
@@ -80,7 +82,7 @@ export default function Booking() {
   const verifyOtp = async () => {
     try {
       const code = otp.join("");
-      const res = await axios.post("http://localhost:5000/api/verify-otp", {
+      const res = await axios.post(`${API_URL}/api/verify-otp`, {
         email: formData.email,
         otp: code,
       });
@@ -104,7 +106,7 @@ export default function Booking() {
     }
 
     try {
-      const res = await axios.post("http://localhost:5000/api/bookings", formData);
+      const res = await axios.post(`${API_URL}/api/bookings`, formData);
 
       if (res.data.success) {
         localStorage.setItem("lastBooking", JSON.stringify(res.data.booking));
